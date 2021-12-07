@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+opencv-python-headless = "==4.5.2.54"
+mediapipe = "==0.8.4.2"
+Pillow = "==8.2.0"
+streamlit = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
