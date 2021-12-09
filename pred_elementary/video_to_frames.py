@@ -18,9 +18,8 @@ def extractImages(path_to_video_folder, pathOut):
 
 if __name__ == "__main__":
     a = argparse.ArgumentParser()
-    a.add_argument("--pathIn", help="path to video")
+    a.add_argument("--path_in", help="path to video")
     args = a.parse_args()
-
     videos = []
     with os.scandir(args.pathIn) as it:
         for entry in it:

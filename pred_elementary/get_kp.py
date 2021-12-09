@@ -1,14 +1,8 @@
 import pandas as pd
-import requests
 import cv2
 import os
 import argparse
-
-
-def download_image(image_url, image_name):
-    img_data = requests.get(image_url).content
-    with open(image_name, 'wb') as handler:
-        handler.write(img_data)
+from misc import download_image
 
 
 def is_valid(raw_index, df):
@@ -41,7 +35,6 @@ def get_key_points(path_to_csv, path_to_images, max_number):
         download_image(url, result_path)
 
         # get key points
-
         temp = []
         for i in arr_kp:
             temp.append(i.split(","))
@@ -78,7 +71,6 @@ if __name__ == '__main__':
     a.add_argument("--path_to_results",
                    help="path where to store result images",
                    required=True)
-
     args = a.parse_args()
     kps, image_names = get_key_points(args.path_to_csv,
                                       args.path_to_images,
